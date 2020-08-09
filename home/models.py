@@ -9,18 +9,25 @@ class UserManager(models.Manager):
         errors = {}
         if len(form_data['first_name']) < 1:
             errors['first_name'] = 'Must enter a first name' 
+
         if len(form_data['last_name']) < 1:
             errors['last_name'] = 'Must enter a last name' 
+        
         if len(form_data['email']) < 1:
             errors['email'] = 'Must enter an email'
+        
         if len(form_data['password']) < 1:
             errors['password'] = 'Must enter an password'
-        if len(form_data['confirmPassword']) < 1:
-            errors['confirmPassword'] = 'Must confirm your password'
-        if form_data['password'] != form_data['confirmPassword']:
-            errors['confirmPassword'] = 'Passwords do not match'   
+        
+        if len(form_data['confirm']) < 1:
+            errors['confirm'] = 'Must confirm your password'
+        
+        if form_data['password'] != form_data['confirm']:
+            errors['confirm'] = 'Passwords do not match'   
+        
         if not EMAIL_MATCH.match(form_data['email']):
             errors['email'] = 'Invalid Email'
+        
         users_with_email = self.filter(email=form_data['email'])
         if users_with_email:
             errors['email'] = 'Email Is Already Registered'                 

@@ -14,6 +14,8 @@ def register(request):
             messages.error(request, value)
             return redirect('/')
     User.objects.register(request.POST)
+    user = User.objects.get(email = request.POST['email'])
+    request.session['user_id'] = user.id
     return redirect('/dashboard')
 
 
