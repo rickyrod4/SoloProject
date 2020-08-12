@@ -18,15 +18,15 @@
             <h1>Welcome To Marios Tacos</h1>
         </div>
         <div class="row">
+            {% if messages %}
+            <ul class="messages">    
+                {% for message in messages %}    
+                     <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
+                {% endfor %}
+            </ul>
+            {% endif %}
             <div class="col">
                 <h2>Register</h2>
-                {% if messages %}
-                <ul class="messages">    
-                    {% for message in messages %}    
-                         <li {% if message.tags %} class="{{ message.tags }}"{% endif %}>{{ message }}</li>    
-                    {% endfor %}
-                </ul>
-                {% endif %}
                 <form action="/register" method="POST">
                     {% csrf_token %}
                     <div class="form-group">
