@@ -58,7 +58,7 @@ class User(models.Model):
     email = models.EmailField()
     password = models.CharField(max_length=255)
     #taco_ordered
-    
+
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -71,6 +71,7 @@ class Taco(models.Model):
 
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+
 
 class Order(models.Model):
     quantity_ordered = models.IntegerField()
