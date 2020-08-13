@@ -57,6 +57,7 @@ class User(models.Model):
     last_name = models.CharField(max_length=255)
     email = models.EmailField()
     password = models.CharField(max_length=255)
+    #taco_ordered
     
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
@@ -64,4 +65,16 @@ class User(models.Model):
     objects = UserManager()
 
 class Taco(models.Model):
-    pass
+    description = models.CharField(max_length=255)
+    price = models.DecimalField(decimal_places=2, max_digits=5)
+    ordered_by = models.ForeignKey(User, related_name='taco_ordered', on_delete=models.CASCADE)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+class Order(models.Model):
+    quantity_ordered = models.IntegerField()
+    total_price = models.DecimalField(decimal_places=2, max_digits=5)
+
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)

@@ -9,6 +9,7 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js" integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV" crossorigin="anonymous"></script>
     {% load static %}
+    <link rel="stylesheet" href="{% static 'dashboard.css' %}">
 </head>
 <body>
     <div class="container">
@@ -51,89 +52,102 @@
               </nav>
         </div>
         <div class="row">
-            <h3>Build Your Taco</h3>
-            <form action="/taco">
-                {% csrf_token %}
-                <div class="row">
-                    <h3>Tortilla</h3>
-                    <div>
+            <div class="row">
+                <h3>Build Your Taco</h3>
+            </div>
+            <div>
+                <form action="/taco">
+                    {% csrf_token %}
+                    <div class="row">
+                        <h3>Tortilla</h3>
                         <div>
-                            <label for="flour">Flour</label>
-                            <input type="checkbox" name="flour" id="flour" value="flour">
+                            <div>
+                                <label for="flour">Flour</label>
+                                <input type="checkbox" name="flour" id="flour" value="flour">
+                            </div>
+                            <div>
+                                <label for="corn">Corn</label>
+                                <input type="checkbox" name="corn" id="corn" value="corn">
+                            </div>
+                        </div>
+                        </div>
+                    <div class="row">
+                        <h3>Ingredients</h3>
+    
+                        <div>
+                            <div>
+                                <label for="egg">Egg</label>
+                                <input type="checkbox" name="egg" id="egg" value="egg">
+                            </div>
+                            <div>
+                                <label for="bacon">Bacon</label>
+                                <input type="checkbox" name="bacon" id="bacon" value="bacon">
+                            </div>
+                            <div>
+                                <label for="potato">Potato</label>
+                                <input type="checkbox" name="potato" id="potato" value="potato">
+                            </div>
+                            <div>
+                                <label for="beans">Beans</label>
+                                <input type="checkbox" name="beans" id="beans" value="beans">
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div>
+                                <label for="sausage">Sausage</label>
+                                <input type="checkbox" name="sausage" id="sausage" value="sausage">
+                            </div>
+                            <div>
+                                <label for="rice">Rice</label>
+                                <input type="checkbox" name="rice" id="rice" value="rice">
+                            </div>
+                            <div>
+                                <label for="cheese">Cheese</label>
+                                <input type="checkbox" name="cheese" id="cheese" value="cheese">
+                            </div>
+                            <div>
+                                <label for="carneGuisada">Carne Guisada</label>
+                                <input type="checkbox" name="carneGuisada" id="carneGuisada" value="carneGuisada">
+                            </div>
+                            <div>
+                                <label for="chickenFajita">Chicken Fajita</label>
+                                <input type="checkbox" name="chickenFajita" id="chickenFajita" value="chickenFajita">
+                            </div>
+                        </div>
+    
+                        <div>
+                            <div>
+                                <label for="beefFajita">Beef Fajita</label>
+                                <input type="checkbox" name="beefFajita" id="beefFajita" value="beefFajita">
+                            </div>
+                            <div>
+                                <label for="barbacoa">Barbacoa</label>
+                                <input type="checkbox" name="barbacoa" id="barbacoa" value="barbacoa">
+                            </div>
+                            <div>
+                                <label for="lengua">Lengua</label>
+                                <input type="checkbox" name="lengua" id="lengua" value="lengua">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <h3>Additions</h3>
+                        <div>
+                            <label for="cilandro">Cilandro</label>
+                            <input type="checkbox" name="cilandro" id="cilandro" value="cilandro">
                         </div>
                         <div>
-                            <label for="corn">Corn</label>
-                            <input type="checkbox" name="corn" id="corn" value="corn">
+                            <label for="onions">Onions</label>
+                            <input type="checkbox" name="onions" id="onions" value="onions">
+                        </div>
+                        <div>                        
+                            <label for="cheese">Chese</label>
+                            <input type="checkbox" name="cheese" id="cheese" value="cheese">
                         </div>
                     </div>
-                    </div>
-                <div class="row">
-                    <h3>Ingredients</h3>
-                    <div>
-                        <label for="egg">Egg</label>
-                        <input type="checkbox" name="egg" id="egg" value="egg">
-                    </div>
-                    <div>
-                        <label for="bacon">Bacon</label>
-                        <input type="checkbox" name="bacon" id="bacon" value="bacon">
-                    </div>
-                    <div>
-                        <label for="potato">Potato</label>
-                        <input type="checkbox" name="potato" id="potato" value="potato">
-                    </div>
-                    <div>
-                        <label for="beans">Beans</label>
-                        <input type="checkbox" name="beans" id="beans" value="beans">
-                    </div>
-                    <div>
-                        <label for="sausage">Sausage</label>
-                        <input type="checkbox" name="sausage" id="sausage" value="sausage">
-                    </div>
-                    <div>
-                        <label for="rice">Rice</label>
-                        <input type="checkbox" name="rice" id="rice" value="rice">
-                    </div>
-                    <div>
-                        <label for="cheese">Cheese</label>
-                        <input type="checkbox" name="cheese" id="cheese" value="cheese">
-                    </div>
-                    <div>
-                        <label for="carneGuisada">Carne Guisada</label>
-                        <input type="checkbox" name="carneGuisada" id="carneGuisada" value="carneGuisada">
-                    </div>
-                    <div>
-                        <label for="chickenFajita">Chicken Fajita</label>
-                        <input type="checkbox" name="chickenFajita" id="chickenFajita" value="chickenFajita">
-                    </div>
-                    <div>
-                        <label for="beefFajita">Beef Fajita</label>
-                        <input type="checkbox" name="beefFajita" id="beefFajita" value="beefFajita">
-                    </div>
-                    <div>
-                        <label for="barbacoa">Barbacoa</label>
-                        <input type="checkbox" name="barbacoa" id="barbacoa" value="barbacoa">
-                    </div>
-                    <div>
-                        <label for="lengua">Lengua</label>
-                        <input type="checkbox" name="lengua" id="lengua" value="lengua">
-                    </div>
-                </div>
-                <div class="row">
-                    <h3>Additions</h3>
-                    <div>
-                        <label for="cilandro">Cilandro</label>
-                        <input type="checkbox" name="cilandro" id="cilandro" value="cilandro">
-                    </div>
-                    <div>
-                        <label for="onions">Onions</label>
-                        <input type="checkbox" name="onions" id="onions" value="onions">
-                    </div>
-                    <div>                        
-                        <label for="cheese">Chese</label>
-                        <input type="checkbox" name="cheese" id="cheese" value="cheese">
-                    </div>
-                </div>
-            </form>
+                </form>
+            </div>
         </div>
     </div>
 </body>
