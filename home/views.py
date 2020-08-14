@@ -34,3 +34,28 @@ def dashboard(request):
         'user' : User.objects.get(id = request.session['user_id'])
     }
     return render(request, 'dashboard.html', context)
+
+
+def myAccount(request):
+    context = {
+        'user' : User.objects.get(id = request.session['user_id']),
+    }
+    return render(request, 'updateAccount.html', context)
+
+def orderHistory(request):
+    context = {
+        'user' : User.objects.get(id = request.session['user_id']),
+    }
+    return render(request, 'orderHistory.html', context)
+
+def favorites(request):
+    context = {
+        'user' : User.objects.get(id = request.session['user_id']),
+    }
+    return render(request, 'favorites.html', context)
+
+def checkout(request):
+    context = {
+        'user' : User.objects.get(id = request.session['user_id']),
+    }
+    return render(request, 'favorites.html', context)

@@ -16,7 +16,7 @@
         <div class="jumbotron">
             <h1>Welcome {{ user.first_name }} {{ user.last_name }}</h1>
             <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">Navbar</a>
+                <a class="navbar-brand" href="/dashboard">Home</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
                 </button>
@@ -24,24 +24,16 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                   <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                      <a class="nav-link" href="#">My Account <span class="sr-only">(current)</span></a>
+                      <a class="nav-link" href="/myAccount">My Account <span class="sr-only">(current)</span></a>
                     </li>
-                    <li class="nav-item">
-                      <a class="nav-link" href="#">Order History</a>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/orderHistory">Order History</a>
                     </li>
-                    <li class="nav-item dropdown">
-                      <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                        Favorites
-                      </a>
-                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                        <a class="dropdown-item" href="#">Action</a>
-                        <a class="dropdown-item" href="#">Another action</a>
-                        <div class="dropdown-divider"></div>
-                        <a class="dropdown-item" href="#">Something else here</a>
-                      </div>
-                    </li>
-                    <li class="nav-item">
-                      <a class="nav-link disabled" href="#">Checkout</a>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/favorites">Favorites</a>
+                      </li>
+                    <li class="nav-item active">
+                      <a class="nav-link" href="/checkout">Checkout</a>
                     </li>
                   </ul>
                   <form class="form-inline my-2 my-lg-0">
@@ -49,7 +41,7 @@
                     <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
                   </form>
                 </div>
-              </nav>
+            </nav>
         </div>
         <div class="row">
             <div class="row">
@@ -60,7 +52,6 @@
                     {% csrf_token %}
                     <div class="row">
                         <h3>Tortilla</h3>
-                        <div>
                             <div>
                                 <label for="flour">Flour</label>
                                 <input type="checkbox" name="flour" id="flour" value="flour">
@@ -69,63 +60,62 @@
                                 <label for="corn">Corn</label>
                                 <input type="checkbox" name="corn" id="corn" value="corn">
                             </div>
-                        </div>
-                        </div>
+                    </div>
                     <div class="row">
                         <h3>Ingredients</h3>
-    
-                        <div>
-                            <div>
+                        <div class="row">
+
+                            <div class="col">
                                 <label for="egg">Egg</label>
                                 <input type="checkbox" name="egg" id="egg" value="egg">
                             </div>
-                            <div>
+                            <div class="col">
                                 <label for="bacon">Bacon</label>
                                 <input type="checkbox" name="bacon" id="bacon" value="bacon">
                             </div>
-                            <div>
+                            <div class="col">
                                 <label for="potato">Potato</label>
                                 <input type="checkbox" name="potato" id="potato" value="potato">
                             </div>
-                            <div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
                                 <label for="beans">Beans</label>
                                 <input type="checkbox" name="beans" id="beans" value="beans">
                             </div>
-                        </div>
-    
-                        <div>
-                            <div>
+                            <div class="col">
                                 <label for="sausage">Sausage</label>
                                 <input type="checkbox" name="sausage" id="sausage" value="sausage">
                             </div>
-                            <div>
+                            <div class="col">
                                 <label for="rice">Rice</label>
                                 <input type="checkbox" name="rice" id="rice" value="rice">
                             </div>
-                            <div>
+                        </div>
+                        <div class="row">
+                            <div class="col">
                                 <label for="cheese">Cheese</label>
                                 <input type="checkbox" name="cheese" id="cheese" value="cheese">
                             </div>
-                            <div>
+                            <div class="col">
                                 <label for="carneGuisada">Carne Guisada</label>
                                 <input type="checkbox" name="carneGuisada" id="carneGuisada" value="carneGuisada">
                             </div>
-                            <div>
+                            <div class="col">
                                 <label for="chickenFajita">Chicken Fajita</label>
                                 <input type="checkbox" name="chickenFajita" id="chickenFajita" value="chickenFajita">
                             </div>
                         </div>
-    
-                        <div>
-                            <div>
+                        <div class="row">
+                            <div class="col">
                                 <label for="beefFajita">Beef Fajita</label>
                                 <input type="checkbox" name="beefFajita" id="beefFajita" value="beefFajita">
                             </div>
-                            <div>
+                            <div class="col">
                                 <label for="barbacoa">Barbacoa</label>
                                 <input type="checkbox" name="barbacoa" id="barbacoa" value="barbacoa">
                             </div>
-                            <div>
+                            <div class="col">
                                 <label for="lengua">Lengua</label>
                                 <input type="checkbox" name="lengua" id="lengua" value="lengua">
                             </div>
@@ -133,19 +123,20 @@
                     </div>
                     <div class="row">
                         <h3>Additions</h3>
-                        <div>
+                        <div class="col">
                             <label for="cilandro">Cilandro</label>
                             <input type="checkbox" name="cilandro" id="cilandro" value="cilandro">
                         </div>
-                        <div>
+                        <div class="col">
                             <label for="onions">Onions</label>
                             <input type="checkbox" name="onions" id="onions" value="onions">
                         </div>
-                        <div>                        
+                        <div class="col">                         
                             <label for="cheese">Chese</label>
                             <input type="checkbox" name="cheese" id="cheese" value="cheese">
                         </div>
                     </div>
+
                 </form>
             </div>
         </div>
